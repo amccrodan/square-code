@@ -6,7 +6,7 @@ function squareCode(inputSentence) {
   }
 
   var outputSentence = "";
-  var cols = 3;
+  var cols = getNumCols(inputSentence.length);
 
   for (var i = 0; i < cols; i++) {
     var word = "";
@@ -26,12 +26,7 @@ function getLowerSquare(numChars) {
 
 // determine the number of columns to use
 function getNumCols(numChars) {
-  var lowerSquare = getLowerSquare(numChars);
-  if (Math.floor(numChars / lowerSquare) > lowerSquare) {
-    return lowerSquare + 1;
-  } else {
-    return lowerSquare;
-  }
+  return getLowerSquare(numChars) + 1;
 }
 
 console.log(squareCode(inputArg));
